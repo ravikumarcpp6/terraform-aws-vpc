@@ -18,7 +18,7 @@ resource "aws_internet_gateway" "gw" {
         var.common_tags,
         var.igw_tags,
     {
-        Name = local.name
+        Name = "${local.name}"
     } 
     )
 }
@@ -69,7 +69,7 @@ resource "aws_subnet" "database" {
 }
 
 resource "aws_db_subnet_group" "default" {
-  name = "${local.name}"
+  # name = "${local.name}"
   subnet_ids = aws_subnet.database[*].id
 
   tags = {
