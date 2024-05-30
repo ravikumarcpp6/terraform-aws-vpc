@@ -69,7 +69,7 @@ resource "aws_subnet" "database" {
 }
 
 resource "aws_db_subnet_group" "default" {
-  Name       = "${local.name}"
+  name = "${local.name}"
   subnet_ids = aws_subnet.database[*].id
 
   tags = {
