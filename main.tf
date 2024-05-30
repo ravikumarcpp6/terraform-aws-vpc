@@ -73,7 +73,7 @@ resource "aws_subnet" "database" {
    subnet_ids = aws_subnet.database[*].id
 
   tags = {
-    Name = "${local.name}"
+    Name = local.name
   }
  }
 
